@@ -1,0 +1,53 @@
+<div class="container-xl">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h4><b>Boat details</b></h4>
+          </div>
+          <div class="col-sm-6">
+            <a href="#" routerLink="/" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i> &nbsp;Back</a>
+          </div>
+        </div>
+      </div>       
+      <table class="table table-striped table-hover table-bordered table-content">
+        <tbody>
+          <tr>
+            <td>
+              <label><b>Name</b></label>
+            </td>
+            <td>
+              <span>{{ boat.name }}</span>              
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label><b>Description</b></label>
+            </td>
+            <td>
+              <span>{{ boat.description }}</span>              
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label><b>Created at</b></label>
+            </td>
+            <td>
+              <span>{{ boat.createdAt | date:'medium' }}</span>              
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label><b>Updated at</b></label>
+            </td>
+            <td>
+              <span>{{ boat.updatedAt | date:'medium' }}</span>              
+            </td>
+          </tr>
+        </tbody>
+      </table>       
+    </div>
+  </div>
+</div>
+

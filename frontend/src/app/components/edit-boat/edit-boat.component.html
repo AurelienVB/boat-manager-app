@@ -1,0 +1,49 @@
+<div class="container-xl">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h4><b>Update boat</b></h4>
+          </div>
+          <div class="col-sm-6">
+            <a href="#" routerLink="/" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i>
+              &nbsp;Back</a>
+          </div>
+        </div>
+      </div>
+      <form #form="ngForm">
+        <div class="table-content">
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="Name" class="p-t-b-10">Name<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="Name" required maxlength="100"
+                [(ngModel)]="boatForm.name" name="Name" #Name="ngModel">
+              <div *ngIf="Name.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!Name.errors['required']">
+                  Name is required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="Description" class="p-t-b-10">Description</label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="Description" maxlength="1000"
+                [(ngModel)]="boatForm.description" name="Description" #Description="ngModel">
+              <div *ngIf="Description.errors && isSubmitted" class="alert alert-danger validationError">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="table-footer">
+          <button class="btn btn-success" (click)="editBoat(form.form.valid)">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
